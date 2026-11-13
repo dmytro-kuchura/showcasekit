@@ -1,38 +1,168 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="nojs">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>ShowcaseKit Support</title>
-<meta name="description" content="Get help with ShowcaseKit.">
-<link rel="icon" href="icon.png">
+<title>ShowcaseKit Support — Help, Export Sizes &amp; FAQ</title>
+<meta name="description" content="Get help with ShowcaseKit for macOS: project backups, supported App Store and Mac screenshot export sizes, troubleshooting and Apple refund info.">
+<meta name="author" content="Dmytro Kuchura">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<link rel="canonical" href="https://dmytro-kuchura.github.io/showcasekit/support.html">
+<link rel="sitemap" type="application/xml" title="Sitemap" href="sitemap.xml">
+<meta name="application-name" content="ShowcaseKit">
+<meta name="apple-mobile-web-app-title" content="ShowcaseKit">
+<meta name="theme-color" content="#0b0d14">
+<meta name="color-scheme" content="dark">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ShowcaseKit">
+<meta property="og:locale" content="en_US">
+<meta property="og:url" content="https://dmytro-kuchura.github.io/showcasekit/support.html">
+<meta property="og:title" content="ShowcaseKit Support — Help, Export Sizes &amp; FAQ">
+<meta property="og:description" content="Questions, bug reports, export pixel dimensions and troubleshooting for ShowcaseKit on macOS.">
+<meta property="og:image" content="https://dmytro-kuchura.github.io/showcasekit/og.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="ShowcaseKit macOS app preview">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ShowcaseKit Support — Help, Export Sizes &amp; FAQ">
+<meta name="twitter:description" content="Questions, bug reports, export pixel dimensions and troubleshooting for ShowcaseKit on macOS.">
+<meta name="twitter:image" content="https://dmytro-kuchura.github.io/showcasekit/og.png">
+
+<link rel="icon" href="icon.png" type="image/png">
+<link rel="apple-touch-icon" href="icon.png">
+<link rel="manifest" href="site.webmanifest">
 <link rel="stylesheet" href="style.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://dmytro-kuchura.github.io/showcasekit/support.html#webpage",
+      "url": "https://dmytro-kuchura.github.io/showcasekit/support.html",
+      "name": "ShowcaseKit Support — Help, Export Sizes & FAQ",
+      "description": "Get help with ShowcaseKit for macOS: project backups, supported App Store and Mac screenshot export sizes, troubleshooting and Apple refund info.",
+      "inLanguage": "en"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "ShowcaseKit", "item": "https://dmytro-kuchura.github.io/showcasekit/" },
+        { "@type": "ListItem", "position": 2, "name": "Support", "item": "https://dmytro-kuchura.github.io/showcasekit/support.html" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Where are my projects saved?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Projects are saved automatically on your Mac, inside ShowcaseKit’s own app container. To move a project to another Mac or keep a backup, use File › Export Project… to save it as a .showcasekit.json file, and File › Import Project… to open it again."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which image sizes does ShowcaseKit export?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "iPhone screenshots export at 1284 x 2778 px, iPad screenshots at 2232 x 2976 px, foldable iPhone Duo screenshots at the sizes for the inner (2007 x 2853 / 2853 x 2007 px) and cover (1398 x 2034 / 2034 x 1398 px) displays, and Mac screenshots at 2880 x 1800, 2560 x 1600, 1440 x 900 or 1280 x 800 px. Product page headers and search results artwork export as opaque PNG files without transparency."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "App Store Connect rejects my image.",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Check that the project’s device type matches the screenshot slot you’re uploading to. If it still fails, open an issue with the exact error message from App Store Connect."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I get a refund?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Purchases are handled by Apple. Request a refund at reportaproblem.apple.com."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
 </head>
 <body>
+
+<nav aria-label="Main">
+  <div class="wrap">
+    <a class="brand" href="./" aria-label="ShowcaseKit home"><img src="icon.png" alt="" width="30" height="30">ShowcaseKit</a>
+    <div class="links">
+      <a href="./#features">Features</a>
+      <a href="./#workflow">Workflow</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="support.html" aria-current="page">Support</a>
+    </div>
+    <a class="btn small" href="https://github.com/dmytro-kuchura/showcasekit/issues/new">Open Issue</a>
+  </div>
+</nav>
+
 <main>
-<header>
-  <img src="icon.png" alt="">
-  <a href="./">ShowcaseKit</a>
-  <nav>
-    <a href="./">About</a>
-    <a href="support.html" aria-current="page">Support</a>
-    <a href="privacy.html">Privacy</a>
-  </nav>
+<header class="page-head">
+  <div class="wrap narrow">
+    <div class="eyebrow">Support</div>
+    <h1>How can we help?</h1>
+    <p class="lede">Questions, bug reports and feature requests are welcome.</p>
+  </div>
 </header>
-<h1>Support</h1>
-<p class="lead">Questions, bug reports and feature requests are welcome.</p>
-<h2>Contact</h2>
-<p>Open an issue on GitHub: <a href="https://github.com/dmytro-kuchura/showcasekit/issues/new">github.com/dmytro-kuchura/showcasekit/issues</a>. Please include your macOS version, the ShowcaseKit version and build (ShowcaseKit › About ShowcaseKit) and, for export problems, which device type and size you were exporting.</p>
-<h2>Common questions</h2>
-<h3>Where are my projects saved?</h3>
-<p>Projects are saved automatically on your Mac, inside ShowcaseKit’s own app container. To move a project to another Mac or keep a backup, use File › Export Project… to save it as a <code>.showcasekit.json</code> file, and File › Import Project… to open it again.</p>
-<h3>Which image sizes does ShowcaseKit export?</h3>
-<p>iPhone screenshots export at 1284 × 2778 px, iPad screenshots at 2232 × 2976 px, foldable iPhone screenshots at the sizes for the inner and cover displays, and Mac screenshots at 2880 × 1800, 2560 × 1600, 1440 × 900 or 1280 × 800 px. Product page headers and search results artwork export as PNG files without transparency, as App Store Connect requires.</p>
-<h3>App Store Connect rejects my image.</h3>
-<p>Check that the project’s device type matches the screenshot slot you’re uploading to. If it still fails, open an issue with the exact error message from App Store Connect.</p>
-<h3>How do I get a refund?</h3>
-<p>Purchases are handled by Apple. Request a refund at <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a>.</p>
-<footer>© 2026 Dmytro Kuchura</footer>
+
+<section class="doc">
+  <div class="wrap narrow">
+    <div class="doc-card">
+      <h2>Contact</h2>
+      <p>Open an issue on GitHub: <a href="https://github.com/dmytro-kuchura/showcasekit/issues/new">github.com/dmytro-kuchura/showcasekit/issues</a>. Please include your macOS version, the ShowcaseKit version and build (<code>ShowcaseKit › About ShowcaseKit</code>) and, for export problems, which device type and size you were exporting.</p>
+    </div>
+
+    <h2 style="margin-top:48px;font-size:26px">Common questions</h2>
+    <div class="faq" style="margin-top:24px">
+      <details open>
+        <summary><h3>Where are my projects saved?</h3></summary>
+        <p>Projects are saved automatically on your Mac, inside ShowcaseKit’s own app container. To move a project to another Mac or keep a backup, use <code>File › Export Project…</code> to save it as a <code>.showcasekit.json</code> file, and <code>File › Import Project…</code> to open it again.</p>
+      </details>
+      <details>
+        <summary><h3>Which image sizes does ShowcaseKit export?</h3></summary>
+        <p>iPhone screenshots export at 1284 × 2778 px, iPad screenshots at 2232 × 2976 px, foldable iPhone Duo screenshots at the sizes for the inner (2007 × 2853 / 2853 × 2007 px) and cover (1398 × 2034 / 2034 × 1398 px) displays, and Mac screenshots at 2880 × 1800, 2560 × 1600, 1440 × 900 or 1280 × 800 px. Product page headers and search results artwork export as opaque PNG files without transparency, as App Store Connect requires.</p>
+      </details>
+      <details>
+        <summary><h3>App Store Connect rejects my image.</h3></summary>
+        <p>Check that the project’s device type matches the screenshot slot you’re uploading to. If it still fails, open an issue with the exact error message from App Store Connect.</p>
+      </details>
+      <details>
+        <summary><h3>How do I get a refund?</h3></summary>
+        <p>Purchases are handled by Apple. Request a refund at <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a>.</p>
+      </details>
+    </div>
+  </div>
+</section>
 </main>
+
+<footer>
+  <div class="wrap">
+    <a class="brand" href="./"><img src="icon.png" alt="" width="22" height="22" loading="lazy">ShowcaseKit</a>
+    <nav aria-label="Footer" class="flinks">
+      <a href="./#features">Features</a>
+      <a href="./#workflow">Workflow</a>
+      <a href="support.html">Support</a>
+      <a href="privacy.html">Privacy</a>
+    </nav>
+    <p>© 2026 Dmytro Kuchura</p>
+  </div>
+</footer>
+
 </body>
 </html>

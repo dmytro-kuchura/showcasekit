@@ -1,37 +1,545 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="nojs">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>ShowcaseKit</title>
-<meta name="description" content="Design store screenshots and product page artwork with device mockups on your Mac.">
-<link rel="icon" href="icon.png">
+<title>ShowcaseKit — App Store Screenshots &amp; Mockups for macOS</title>
+<meta name="description" content="Design App Store and Google Play marketing screenshots, MacBook mockups and product page artwork on your Mac, then export at exact store pixel sizes.">
+<meta name="author" content="Dmytro Kuchura">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<link rel="canonical" href="https://dmytro-kuchura.github.io/showcasekit/">
+<link rel="sitemap" type="application/xml" title="Sitemap" href="sitemap.xml">
+<meta name="application-name" content="ShowcaseKit">
+<meta name="apple-mobile-web-app-title" content="ShowcaseKit">
+<meta name="theme-color" content="#0b0d14">
+<meta name="color-scheme" content="dark">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ShowcaseKit">
+<meta property="og:locale" content="en_US">
+<meta property="og:url" content="https://dmytro-kuchura.github.io/showcasekit/">
+<meta property="og:title" content="ShowcaseKit — App Store screenshots, designed on your Mac">
+<meta property="og:description" content="Turn your app’s captures into store-ready marketing screenshots, MacBook mockups and App Store creative artwork—100% offline.">
+<meta property="og:image" content="https://dmytro-kuchura.github.io/showcasekit/og.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="ShowcaseKit macOS app preview showing an App Store marketing screenshot with an iPhone mockup and List Popout card">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ShowcaseKit — App Store screenshots, designed on your Mac">
+<meta name="twitter:description" content="Design App Store marketing screenshots, MacBook mockups and product page artwork on your Mac.">
+<meta name="twitter:image" content="https://dmytro-kuchura.github.io/showcasekit/og.png">
+<meta name="twitter:image:alt" content="ShowcaseKit macOS app preview showing an App Store marketing screenshot with an iPhone mockup and List Popout card">
+
+<link rel="icon" href="icon.png" type="image/png">
+<link rel="apple-touch-icon" href="icon.png">
+<link rel="manifest" href="site.webmanifest">
+<link rel="preload" href="icon.png" as="image">
 <link rel="stylesheet" href="style.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://dmytro-kuchura.github.io/showcasekit/#author",
+      "name": "Dmytro Kuchura",
+      "url": "https://github.com/dmytro-kuchura"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://dmytro-kuchura.github.io/showcasekit/#app",
+      "name": "ShowcaseKit",
+      "description": "Native macOS app for designing App Store and Google Play marketing screenshots, MacBook mockups and product page artwork with exact store exports.",
+      "url": "https://dmytro-kuchura.github.io/showcasekit/",
+      "image": "https://dmytro-kuchura.github.io/showcasekit/icon.png",
+      "screenshot": "https://dmytro-kuchura.github.io/showcasekit/og.png",
+      "applicationCategory": "DesignApplication",
+      "applicationSubCategory": "Screenshot & Mockup Designer",
+      "operatingSystem": "macOS 15.0 or later",
+      "softwareVersion": "1.0",
+      "inLanguage": "en",
+      "author": { "@id": "https://dmytro-kuchura.github.io/showcasekit/#author" },
+      "publisher": { "@id": "https://dmytro-kuchura.github.io/showcasekit/#author" },
+      "featureList": [
+        "14 device models for iPhone, iPad, iPhone Duo, Mac and Android",
+        "Exact @3x App Store Connect and Google Play export sizes",
+        "App Store product page header and search results artwork",
+        "Four layouts including List Popout with 8-handle crop selector",
+        "Gradient presets, custom gradients, solid fills and 11 typefaces",
+        "Portable .showcasekit.json project files"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://dmytro-kuchura.github.io/showcasekit/#website",
+      "name": "ShowcaseKit",
+      "url": "https://dmytro-kuchura.github.io/showcasekit/",
+      "inLanguage": "en",
+      "publisher": { "@id": "https://dmytro-kuchura.github.io/showcasekit/#author" }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://dmytro-kuchura.github.io/showcasekit/#webpage",
+      "url": "https://dmytro-kuchura.github.io/showcasekit/",
+      "name": "ShowcaseKit — App Store Screenshots & Mockups for macOS",
+      "description": "Design App Store and Google Play marketing screenshots, MacBook mockups and product page artwork on your Mac, then export at exact store pixel sizes.",
+      "isPartOf": { "@id": "https://dmytro-kuchura.github.io/showcasekit/#website" },
+      "about": { "@id": "https://dmytro-kuchura.github.io/showcasekit/#app" },
+      "primaryImageOfPage": "https://dmytro-kuchura.github.io/showcasekit/og.png",
+      "inLanguage": "en"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://dmytro-kuchura.github.io/showcasekit/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Which image sizes does ShowcaseKit export?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "iPhone exports at 1284 x 2778 px and iPad at 2232 x 2976 px. iPhone Duo exports at 2007 x 2853 / 2853 x 2007 px (inner) and 1398 x 2034 / 2034 x 1398 px (cover). Mac projects export at 2880 x 1800, 2560 x 1600, 1440 x 900 or 1280 x 800 px. App Store creative headers (21:9 · 3840 x 1646, 16:9 · 5244 x 2950) and search results artwork (3:2 · 3840 x 2560 or 1920 x 1280, 16:9 · 5244 x 2950) export as opaque PNGs."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does ShowcaseKit collect or upload my screenshots?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. ShowcaseKit has no accounts, no analytics and no network access. All projects, screenshots and logos are stored locally in ShowcaseKit’s sandboxed container on your Mac."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Where are my projects saved and how do I back them up?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Projects save automatically on your Mac. To back up a project or move it to another Mac, choose File › Export Project… to save a portable .showcasekit.json file, then open it with File › Import Project…."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is it compatible with PreviewKit?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. .showcasekit.json uses the same format as PreviewKit’s .previewkit.json, so iOS and Android phone/tablet projects move freely between the two."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "App Store Connect rejects my image—what should I check?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Verify that your project’s device class (iPhone, iPad, iPhone Duo or Mac) matches the slot you are uploading to in App Store Connect. If it still fails, check the Support page or open a GitHub issue with the exact error message."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What are the system requirements?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "macOS 15.0 or later. ShowcaseKit is a native SwiftUI Mac app sold through the Mac App Store."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+<script>document.documentElement.className = "js";</script>
 </head>
 <body>
+
+<nav aria-label="Main">
+  <div class="wrap">
+    <a class="brand" href="./" aria-label="ShowcaseKit home"><img src="icon.png" alt="" width="30" height="30">ShowcaseKit</a>
+    <div class="links">
+      <a href="#features">Features</a>
+      <a href="#workflow">Workflow</a>
+      <a href="#privacy">Privacy</a>
+      <a href="#faq">FAQ</a>
+      <a href="support.html">Support</a>
+    </div>
+    <a class="btn small" href="#get">Get ShowcaseKit</a>
+  </div>
+</nav>
+
 <main>
-<header>
-  <img src="icon.png" alt="">
-  <a href="./">ShowcaseKit</a>
-  <nav>
-    <a href="./" aria-current="page">About</a>
-    <a href="support.html">Support</a>
-    <a href="privacy.html">Privacy</a>
-  </nav>
+<header class="hero">
+  <div class="wrap">
+    <a class="pill" href="#features"><b>macOS</b> Native SwiftUI studio · Version 1.0</a>
+    <h1>App Store screenshots,<br><span class="grad">designed on your Mac</span></h1>
+    <p class="lede">Turn raw captures into polished App Store and Google Play marketing images, MacBook mockups and product page artwork—then export at the exact pixel sizes App Store Connect expects.</p>
+    <div class="cta">
+      <a class="btn" href="#get">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.37 12.6c-.02-2.3 1.88-3.4 1.97-3.46-1.07-1.57-2.74-1.78-3.33-1.8-1.42-.14-2.77.83-3.49.83-.72 0-1.83-.81-3.01-.79-1.55.02-2.98.9-3.78 2.29-1.61 2.8-.41 6.94 1.16 9.21.77 1.11 1.68 2.36 2.88 2.31 1.16-.05 1.59-.75 2.99-.75 1.4 0 1.79.75 3.01.72 1.24-.02 2.03-1.13 2.79-2.25.88-1.29 1.24-2.53 1.26-2.6-.03-.01-2.42-.93-2.45-3.71zM14.08 5.84c.64-.77 1.07-1.85.95-2.92-.92.04-2.03.61-2.69 1.38-.59.68-1.1 1.78-.97 2.83 1.03.08 2.07-.52 2.71-1.29z"/></svg>
+        Get on the Mac App Store
+      </a>
+      <a class="btn ghost" href="#features">Explore features</a>
+    </div>
+    <p class="cta-meta"><span>macOS 15.0+</span><span>14 device models</span><span>@3x JPEG &amp; Opaque PNG</span><span>100% Offline</span></p>
+
+    <div class="shot" id="shot">
+      <div class="win" role="img" aria-label="ShowcaseKit window showing project sidebar, screen storyboard, live device canvas and inspector">
+        <div class="titlebar"><i></i><i></i><i></i><span>Discover Amazing Places — Travel Companion · iOS iPhone · 1284 × 2778 px</span></div>
+        <div class="sk-body">
+          <div class="sk-side">
+            <div class="sk-grp">Projects</div>
+            <div class="sk-proj sel"><span class="sk-dot" style="background:linear-gradient(135deg,#6366f1,#f43f5e)"></span>Travel Companion<em>iPhone</em></div>
+            <div class="sk-proj"><span class="sk-dot" style="background:linear-gradient(135deg,#11998e,#38ef7d)"></span>Mac Workspace<em>Mac</em></div>
+            <div class="sk-proj"><span class="sk-dot" style="background:linear-gradient(135deg,#8e2de2,#4a00e0)"></span>Foldable Reader<em>Duo</em></div>
+            <div class="sk-proj"><span class="sk-dot" style="background:linear-gradient(135deg,#f97316,#ed213a)"></span>Field Notes<em>iPad</em></div>
+            <div class="sk-proj"><span class="sk-dot" style="background:linear-gradient(135deg,#02aab0,#00cdac)"></span>Shop Android<em>Phone</em></div>
+            <div class="sk-grp" style="margin-top:12px">App Store Creative</div>
+            <div class="sk-proj"><span class="sk-dot" style="background:#6d4aff"></span>Header<em>21:9</em></div>
+            <div class="sk-proj"><span class="sk-dot" style="background:#9d86ff"></span>Search Results<em>3:2</em></div>
+          </div>
+
+          <div class="sk-board">
+            <div class="sk-board-hd"><b>Storyboard</b><span>4 screens</span></div>
+            <div class="sk-thumb sel">
+              <div class="sk-mini" style="background:linear-gradient(135deg,#6366f1,#f43f5e)"><span></span><i></i></div>
+              <div class="sk-thumb-meta"><b>Discover Places</b><small>List Popout</small></div>
+            </div>
+            <div class="sk-thumb">
+              <div class="sk-mini" style="background:linear-gradient(135deg,#7928CA,#FF0080)"><span></span><i></i></div>
+              <div class="sk-thumb-meta"><b>Track Routes</b><small>Text Top</small></div>
+            </div>
+            <div class="sk-thumb">
+              <div class="sk-mini" style="background:linear-gradient(135deg,#11998e,#38ef7d)"><span></span><i></i></div>
+              <div class="sk-thumb-meta"><b>Smart Itinerary</b><small>Text Bottom</small></div>
+            </div>
+            <div class="sk-thumb">
+              <div class="sk-mini" style="background:linear-gradient(135deg,#0a0a0a,#262626)"><span></span><i></i></div>
+              <div class="sk-thumb-meta"><b>Offline Maps</b><small>Device Only</small></div>
+            </div>
+          </div>
+
+          <div class="sk-stage">
+            <div class="sk-toolbar">
+              <span class="chip">65%</span>
+              <span class="chip accent">Export ⌘E</span>
+              <span class="chip">ZIP ⇧⌘E</span>
+              <span class="chip" style="margin-left:auto">1284 × 2778 px</span>
+            </div>
+            <div class="sk-canvas-wrap">
+              <div class="sk-card">
+                <h4>Discover Amazing Places</h4>
+                <p>The best companion for your next journey</p>
+                <div class="sk-phone">
+                  <div class="sk-island"></div>
+                  <div class="sk-row"><i></i><div><b></b><span></span></div></div>
+                  <div class="sk-row"><i></i><div><b></b><span></span></div></div>
+                  <div class="sk-row done"><i></i><div><b></b><span></span></div></div>
+                  <div class="sk-row done"><i></i><div><b></b><span></span></div></div>
+                </div>
+                <div class="sk-popout">
+                  <div class="sk-pop-ic">✦</div>
+                  <div><b>Arrived at terminal</b><small>Zhytomyr · May 13</small></div>
+                  <em>07:01</em>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="sk-insp">
+            <div class="sk-seg"><span class="on">General</span><span>Text</span><span>Screenshot</span></div>
+            <div>
+              <div class="sk-sec-lbl">Layout</div>
+              <div class="sk-layouts">
+                <div class="sk-lay">Text Top</div>
+                <div class="sk-lay">Text Bottom</div>
+                <div class="sk-lay">Device Only</div>
+                <div class="sk-lay on">List Popout</div>
+              </div>
+            </div>
+            <div>
+              <div class="sk-sec-lbl">Device</div>
+              <div class="sk-kv"><span>Model</span><b>iPhone 17 Pro</b></div>
+              <div class="sk-kv"><span>Frame</span><b>Black</b></div>
+              <div class="sk-kv"><span>Overlay</span><b style="color:var(--green)">On</b></div>
+            </div>
+            <div>
+              <div class="sk-sec-lbl">Background</div>
+              <div class="sk-swatches">
+                <span class="sk-sw" style="background:linear-gradient(135deg,#f97316,#ed213a)"></span>
+                <span class="sk-sw on" style="background:linear-gradient(135deg,#6366f1,#a855f7)"></span>
+                <span class="sk-sw" style="background:linear-gradient(135deg,#7928CA,#FF0080)"></span>
+                <span class="sk-sw" style="background:linear-gradient(135deg,#11998e,#38ef7d)"></span>
+                <span class="sk-sw" style="background:linear-gradient(135deg,#8e2de2,#4a00e0)"></span>
+                <span class="sk-sw" style="background:linear-gradient(135deg,#ff9966,#ff5e62)"></span>
+                <span class="sk-sw" style="background:linear-gradient(135deg,#02aab0,#00cdac)"></span>
+                <span class="sk-sw" style="background:linear-gradient(135deg,#0a0a0a,#262626)"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </header>
-<h1>App Store screenshots, designed on your Mac</h1>
-<p class="lead">ShowcaseKit turns your app’s screenshots into polished App Store marketing images with device mockups, headlines and gradients, then exports them at the exact sizes App Store Connect expects.</p>
-<h2>What you can make</h2>
-<ul>
-  <li>Screenshot sets for iPhone, iPad and foldable iPhone displays, in portrait or landscape.</li>
-  <li>Mac screenshots in a MacBook Pro or MacBook Air mockup, at 2880 × 1800, 2560 × 1600, 1440 × 900 or 1280 × 800 px.</li>
-  <li>Product page headers and search results artwork with your logo, a short phrase and device mockups.</li>
-  <li>Four layouts, eleven device models, gradient and solid backgrounds, and eleven typefaces.</li>
-  <li>One-click export of a single image, a ZIP of a whole set, or a folder.</li>
-</ul>
-<p>Everything stays on your Mac. ShowcaseKit has no accounts, no analytics and no network access.</p>
-<p><a href="support.html">Get support</a> · <a href="privacy.html">Privacy policy</a></p>
-<footer>© 2026 Dmytro Kuchura</footer>
+
+<section id="features">
+  <div class="wrap">
+    <div class="center reveal">
+      <div class="eyebrow">Features</div>
+      <h2>Everything you need to ship store-ready visuals</h2>
+      <p class="sub">Built natively in SwiftUI for macOS. No browser tabs, no Figma templates to maintain and no manual resizing for App Store Connect.</p>
+    </div>
+    <div class="grid">
+      <div class="card reveal">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M10 5h4M11 19h2"/></svg></div>
+        <h3>14 device models</h3>
+        <p>Frame captures in iPhone 17 Pro, iPhone 15 Pro, iPhone 14, iPhone SE, iPad Pro, iPad Air, iPhone Duo, MacBook Pro, MacBook Air, Pixel and Galaxy devices.</p>
+      </div>
+      <div class="card reveal">
+        <div class="ico p"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 8h10M7 12h6M7 16h4"/></svg></div>
+        <h3>Exact store dimensions</h3>
+        <p>Exports @3x JPEGs at 1284 × 2778 (iPhone), 2232 × 2976 (iPad), foldable iPhone Duo sizes and all four 16:10 Mac App Store resolutions.</p>
+      </div>
+      <div class="card reveal">
+        <div class="ico g"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M7 15l3-3 2 2 4-4 3 5"/></svg></div>
+        <h3>App Store creative assets</h3>
+        <p>Design 21:9 product page headers and 3:2 or 16:9 search results artwork with your logo, tagline and up to three live storyboard mockups.</p>
+      </div>
+      <div class="card reveal">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="8" height="18" rx="1.5"/><rect x="13" y="3" width="8" height="8" rx="1.5"/><rect x="13" y="13" width="8" height="8" rx="1.5"/></svg></div>
+        <h3>Four focused layouts</h3>
+        <p>Switch between Text Top, Text Bottom, Device Only and List Popout—with an 8-handle crop selector or clickable timeline rows.</p>
+      </div>
+      <div class="card reveal">
+        <div class="ico p"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18"/></svg></div>
+        <h3>sRGB gradients &amp; 11 typefaces</h3>
+        <p>Pick from 9 curated presets, custom CSS-angle gradients, solid fills and 11 bundled Google Fonts alongside SF Pro, SF Pro Rounded and New York.</p>
+      </div>
+      <div class="card reveal">
+        <div class="ico g"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5M5 20h14"/></svg></div>
+        <h3>One-click batch export</h3>
+        <p>Export the current screen (⌘E), archive an entire storyboard as a ZIP (⇧⌘E), or save ordered files straight into a folder (⌥⇧⌘E).</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="workflow">
+  <div class="wrap">
+    <div class="row">
+      <div class="reveal">
+        <div class="eyebrow">Multi-platform</div>
+        <h2>One studio for iPhone, iPad, iPhone Duo and Mac</h2>
+        <p class="sub">Keep every device set for your app side by side in a single workspace. Each project knows its target canvas and exports at native @3x resolution.</p>
+        <ul>
+          <li><span><b>iPhone Duo support.</b> Target inner (2007 × 2853) or cover (1398 × 2034) displays in portrait or landscape, complete with fold crease geometry.</span></li>
+          <li><span><b>Smart MacBook Fit mode.</b> Frame window captures in MacBook Pro or MacBook Air—the lid reshapes to your screenshot proportions across all four 16:10 sizes.</span></li>
+          <li><span><b>Google Play included.</b> Build Android phone and tablet sets with Pixel 9 Pro, Pixel 8, Galaxy S24, Pixel Tablet and Galaxy Tab S9 mockups.</span></li>
+        </ul>
+      </div>
+      <div class="panel reveal" aria-hidden="true">
+        <div class="titlebar"><i></i><i></i><i></i><span>Export Canvases</span></div>
+        <div class="multi">
+          <div class="mc"><div class="av" style="background:linear-gradient(135deg,#6366f1,#a855f7)">iOS</div><div><b>iPhone 17 Pro · Portrait</b><small>1284 × 2778 px</small></div><span class="st">@3x JPEG</span></div>
+          <div class="mc"><div class="av" style="background:linear-gradient(135deg,#7928CA,#FF0080)">iPD</div><div><b>iPad Pro · Portrait</b><small>2232 × 2976 px</small></div><span class="st">@3x JPEG</span></div>
+          <div class="mc"><div class="av" style="background:linear-gradient(135deg,#8e2de2,#4a00e0)">DUO</div><div><b>iPhone Duo · Inner Display</b><small>2007 × 2853 / 2853 × 2007 px</small></div><span class="st">@3x JPEG</span></div>
+          <div class="mc"><div class="av" style="background:linear-gradient(135deg,#11998e,#38ef7d)">MAC</div><div><b>MacBook Pro · 16:10</b><small>2880 × 1800 · 2560 × 1600 · 1440 × 900 · 1280 × 800</small></div><span class="st g">Fit / Fill</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row rev">
+      <div class="reveal">
+        <div class="eyebrow">App Store Creative</div>
+        <h2>Product page headers &amp; search results artwork</h2>
+        <p class="sub">Combine your app logo, an optional tagline and up to three mockups from your storyboard’s first screens—ready to upload to App Store Connect.</p>
+        <ul>
+          <li><span><b>21:9, 3:2 and 16:9 placements.</b> Export 3840 × 1646 headers, 3840 × 2560 or 1920 × 1280 search artwork, or universal 5244 × 2950 16:9 PNGs.</span></li>
+          <li><span><b>Opaque PNG guaranteed.</b> Creative assets render without alpha channels so App Store Connect accepts every upload cleanly.</span></li>
+          <li><span><b>List Popout spotlight.</b> Crop any detail from a screenshot with an 8-handle selector to lift a floating card right off the frame.</span></li>
+        </ul>
+      </div>
+      <div class="panel reveal" aria-hidden="true">
+        <div class="titlebar"><i></i><i></i><i></i><span>App Store Creative · Header (21:9)</span></div>
+        <div class="creative-box">
+          <div class="creative-banner">
+            <div class="creative-copy">
+              <img class="creative-logo" src="icon.png" alt="" width="34" height="34">
+              <strong>Design. Frame. Ship.</strong>
+              <span>App Store screenshots in minutes</span>
+            </div>
+            <div class="creative-phones">
+              <div class="cp"><i></i><b></b><i></i><i></i></div>
+              <div class="cp mid"><i></i><b></b><i></i><i></i><i></i></div>
+              <div class="cp"><i></i><b></b><i></i><i></i></div>
+            </div>
+          </div>
+          <div class="creative-meta">
+            <span class="chip accent">21:9 · 3840 × 1646 px</span>
+            <span class="chip">Opaque PNG</span>
+            <span class="chip">3 Storyboard Mockups</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="reveal">
+        <div class="eyebrow">Open &amp; Portable</div>
+        <h2>Plain JSON projects with full undo history</h2>
+        <p class="sub">Every slider drag, gradient edit and storyboard reorder is undoable with ⌘Z and saved automatically—or exported as a single portable file.</p>
+        <ul>
+          <li><span><b>Shareable .showcasekit.json files.</b> Back up projects or move them between Macs with File › Export Project… and File › Import Project….</span></li>
+          <li><span><b>PreviewKit compatible.</b> Mobile and tablet project files interchange directly with the PreviewKit web format.</span></li>
+          <li><span><b>Accurate sRGB compositing.</b> Gradients are interpolated in sRGB and flattened onto opaque rounded corners with zero dark edge fringes.</span></li>
+        </ul>
+      </div>
+      <div class="panel reveal" aria-hidden="true">
+        <div class="titlebar"><i></i><i></i><i></i><span>travel-companion.showcasekit.json</span></div>
+        <div class="json"><span class="ln">1</span>{
+<span class="ln">2</span>  <span class="k">"name"</span>: <span class="s">"Travel Companion"</span>,
+<span class="ln">3</span>  <span class="k">"platform"</span>: <span class="s">"ios"</span>,
+<span class="ln">4</span>  <span class="k">"screenCategory"</span>: <span class="s">"phone"</span>,
+<span class="ln">5</span>  <span class="k">"screens"</span>: [
+<span class="ln">6</span>    {
+<span class="ln">7</span>      <span class="k">"title"</span>: <span class="s">"Discover Amazing Places"</span>,
+<span class="hl"><span class="ln">8</span>      <span class="k">"layout"</span>: <span class="s">"list-popout"</span>,</span>
+<span class="ln">9</span>      <span class="k">"deviceModel"</span>: <span class="s">"iphone-17-pro"</span>,
+<span class="ln">10</span>     <span class="k">"fontFamily"</span>: <span class="s">"\"Inter\", ui-sans-serif, sans-serif"</span>,
+<span class="ln">11</span>     <span class="k">"gradient"</span>: {
+<span class="ln">12</span>       <span class="k">"from"</span>: <span class="s">"#6366f1"</span>, <span class="k">"to"</span>: <span class="s">"#a855f7"</span>, <span class="k">"angle"</span>: <span class="n">45</span>
+<span class="ln">13</span>     }
+<span class="ln">14</span>   }
+<span class="ln">15</span> ]
+<span class="ln">16</span>}</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="privacy">
+  <div class="wrap">
+    <div class="center reveal">
+      <div class="eyebrow">Privacy &amp; Craft</div>
+      <h2>Everything stays on your Mac</h2>
+      <p class="sub">ShowcaseKit has no accounts, no analytics and no network access. Your unreleased app screenshots never leave your machine.</p>
+    </div>
+    <div class="trust reveal">
+      <div><b>100% Offline</b><p>Does not connect to the internet. No telemetry, no crash reporters and no remote asset servers.</p></div>
+      <div><b>App Sandboxed</b><p>Reads and writes files outside its container only when you choose them in an open or save dialog, or drop them in.</p></div>
+      <div><b>Zero Tracking</b><p>Apple’s App Privacy manifest declares no data collection and no tracking of any kind.</p></div>
+      <div><b>Built for macOS</b><p>Native SwiftUI 3-column workspace supporting macOS 15.0+ with Liquid Glass styling on macOS 26+.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap narrow">
+    <div class="center reveal">
+      <div class="eyebrow">FAQ</div>
+      <h2>Questions, answered</h2>
+    </div>
+    <div class="faq reveal">
+      <details open>
+        <summary><h3>Which image sizes does ShowcaseKit export?</h3></summary>
+        <p>iPhone exports at 1284 × 2778 px and iPad at 2232 × 2976 px. iPhone Duo exports at 2007 × 2853 / 2853 × 2007 px (inner) and 1398 × 2034 / 2034 × 1398 px (cover). Mac projects export at 2880 × 1800, 2560 × 1600, 1440 × 900 or 1280 × 800 px. App Store creative headers (21:9 · 3840 × 1646, 16:9 · 5244 × 2950) and search results artwork (3:2 · 3840 × 2560 or 1920 × 1280, 16:9 · 5244 × 2950) export as opaque PNGs.</p>
+      </details>
+      <details>
+        <summary><h3>Does ShowcaseKit collect or upload my screenshots?</h3></summary>
+        <p>No. ShowcaseKit has no accounts, no analytics and no network access. All projects, screenshots and logos are stored locally in ShowcaseKit’s sandboxed container on your Mac.</p>
+      </details>
+      <details>
+        <summary><h3>Where are my projects saved and how do I back them up?</h3></summary>
+        <p>Projects save automatically on your Mac. To back up a project or move it to another Mac, choose <code>File › Export Project…</code> to save a portable <code>.showcasekit.json</code> file, then open it with <code>File › Import Project…</code>.</p>
+      </details>
+      <details>
+        <summary><h3>Is it compatible with PreviewKit?</h3></summary>
+        <p>Yes. <code>.showcasekit.json</code> uses the same format as PreviewKit’s <code>.previewkit.json</code>, so iOS and Android phone/tablet projects move freely between the two.</p>
+      </details>
+      <details>
+        <summary><h3>App Store Connect rejects my image—what should I check?</h3></summary>
+        <p>Verify that your project’s device class (iPhone, iPad, iPhone Duo or Mac) matches the slot you are uploading to in App Store Connect. If it still fails, check the <a href="support.html">Support page</a> or open a GitHub issue with the exact error message.</p>
+      </details>
+      <details>
+        <summary><h3>What are the system requirements?</h3></summary>
+        <p>macOS 15.0 or later. ShowcaseKit is a native SwiftUI Mac app sold through the Mac App Store.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section id="get">
+  <div class="wrap">
+    <div class="center reveal">
+      <div class="eyebrow">Mac App Store</div>
+      <h2>Get ShowcaseKit for Mac</h2>
+      <p class="sub">Design your next App Store launch offline, with exact export sizes and zero subscriptions.</p>
+    </div>
+    <div class="dl">
+      <div class="dlmain reveal">
+        <img src="icon.png" alt="ShowcaseKit app icon" width="84" height="84" loading="lazy">
+        <h3>ShowcaseKit 1.0</h3>
+        <p class="meta">Distributed via the Mac App Store · macOS 15.0+</p>
+        <div class="cta" style="justify-content:flex-start">
+          <a class="btn" href="support.html">Support &amp; Documentation</a>
+          <a class="btn ghost" href="https://github.com/dmytro-kuchura/showcasekit/issues/new">Report an Issue</a>
+        </div>
+        <dl>
+          <dt>Requires</dt><dd>macOS 15.0 or later</dd>
+          <dt>Exports</dt><dd>JPEG (@3x screens), Opaque PNG (App Store Creative)</dd>
+          <dt>Projects</dt><dd><code>.showcasekit.json</code> (PreviewKit-compatible)</dd>
+          <dt>Privacy</dt><dd>Zero data collection · No network access</dd>
+        </dl>
+      </div>
+      <div class="older reveal">
+        <h3>Supported export sizes</h3>
+        <ul>
+          <li>iPhone<span>1284 × 2778 px</span></li>
+          <li>iPad<span>2232 × 2976 px</span></li>
+          <li>iPhone Duo (Inner)<span>2007 × 2853 px</span></li>
+          <li>iPhone Duo (Cover)<span>1398 × 2034 px</span></li>
+          <li>Mac (16:10)<span>2880 × 1800 px</span></li>
+          <li>Creative Header (21:9)<span>3840 × 1646 px</span></li>
+        </ul>
+        <a class="rss" href="privacy.html">Read privacy policy →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 </main>
+
+<footer>
+  <div class="wrap">
+    <a class="brand" href="./"><img src="icon.png" alt="" width="22" height="22" loading="lazy">ShowcaseKit</a>
+    <nav aria-label="Footer" class="flinks">
+      <a href="#features">Features</a>
+      <a href="#workflow">Workflow</a>
+      <a href="#faq">FAQ</a>
+      <a href="support.html">Support</a>
+      <a href="privacy.html">Privacy</a>
+    </nav>
+    <p>© 2026 Dmytro Kuchura</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var els = document.querySelectorAll('.reveal, #shot');
+  if (!('IntersectionObserver' in window)) {
+    els.forEach(function (e) { e.classList.add('in'); });
+    return;
+  }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) {
+        e.target.classList.add('in');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  els.forEach(function (e) { io.observe(e); });
+})();
+</script>
 </body>
 </html>

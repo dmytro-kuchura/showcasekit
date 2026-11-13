@@ -1,0 +1,16 @@
+{
+  "name": "ShowcaseKit",
+  "short_name": "ShowcaseKit",
+  "description": "Design App Store and Google Play marketing screenshots, MacBook mockups and product page artwork on your Mac.",
+  "start_url": "./",
+  "display": "browser",
+  "background_color": "#0b0d14",
+  "theme_color": "#0b0d14",
+  "icons": [
+    {
+      "src": "icon.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    }
+  ]
+}
